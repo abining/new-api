@@ -1,0 +1,52 @@
+{
+  "browser": "151.0.7922.34",
+  "base": "7d8b912",
+  "environment": "Actual Rsbuild frontend, isolated Chromium, synthetic API fixtures; no backend/database exercised.",
+  "steps": "For each page: edit A with a value, close, edit previously uncached B without a value, save without changing B.",
+  "requests": [
+    {
+      "path": "/api/token/",
+      "body": {
+        "name": "B - never expires",
+        "remain_quota": 0,
+        "expired_time": -1,
+        "unlimited_quota": true,
+        "model_limits_enabled": false,
+        "model_limits": "",
+        "allow_ips": "",
+        "allow_user_quota_query": false,
+        "group": "default",
+        "auto_groups": [],
+        "cross_group_retry": false,
+        "id": 2
+      }
+    },
+    {
+      "path": "/api/redemption/",
+      "body": {
+        "name": "B - never expires",
+        "quota": 5000000,
+        "expired_time": 0,
+        "count": 1,
+        "id": 2
+      }
+    },
+    {
+      "path": "/api/models/",
+      "body": {
+        "id": 8,
+        "model_name": "b-unassigned-model",
+        "description": "No vendor",
+        "icon": "",
+        "tags": "",
+        "vendor_id": 0,
+        "endpoints": "",
+        "name_rule": 0,
+        "status": 1,
+        "sync_official": 1,
+        "enable_groups": [],
+        "quota_types": []
+      }
+    }
+  ]
+}
